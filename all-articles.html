@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Articles | নূর আলম</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600&family=Noto+Naskh+Arabic:wght@400;700&family=Noto+Serif+Bengali:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <span id="current-date" class="header-date"></span>
+            <button id="theme-toggle">🌙 Dark Mode</button>
+            <a href="index.html" class="logo">নূর আলম</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h3 class="section-title">Article Archive</h3>
+        
+        <section class="more-stories-grid">
+            <!-- Article Card 1 -->
+            <article class="post-card">
+                <img src="https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?auto=format&fit=crop&w=500&q=80" alt="Bicycle on dirt path" class="small-post-image">
+                <div class="post-content">
+                    <span class="post-meta">April 10, 2026 • Journal</span>
+                    <h3 class="post-title"><a href="post-ride.html">Notes from a Morning Ride</a></h3>
+                    <p class="post-excerpt">Finding stillness early in the morning on rural paths, right before the sun fully burns off the mist.</p>
+                    <a href="post-ride.html" class="read-more">Read Full Story →</a>
+                </div>
+            </article>
+
+            <!-- Article Card 2 -->
+            <article class="post-card">
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=500&q=80" alt="Bonfire" class="small-post-image">
+                <div class="post-content">
+                    <span class="post-meta">Jan 16, 2026 • Journal</span>
+                    <h3 class="post-title"><a href="#">Winter Bonfire Notes</a></h3>
+                    <p class="post-excerpt">Gathering around the fire during the colder months.</p>
+                    <a href="#" class="read-more">Read Full Story →</a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 নূর আলম. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('theme-toggle');
+        if(localStorage.getItem('theme') === 'dark') { document.documentElement.setAttribute('data-theme', 'dark'); btn.textContent = '☀️ Light Mode'; }
+        btn.addEventListener('click', () => {
+            if(document.documentElement.getAttribute('data-theme') === 'dark') { document.documentElement.removeAttribute('data-theme'); localStorage.setItem('theme', 'light'); btn.textContent = '🌙 Dark Mode'; } 
+            else { document.documentElement.setAttribute('data-theme', 'dark'); localStorage.setItem('theme', 'dark'); btn.textContent = '☀️ Light Mode'; }
+        });
+        const dateElement = document.getElementById('current-date');
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        dateElement.textContent = new Date().toLocaleDateString('bn-BD', options);
+    </script>
+</body>
+</html>

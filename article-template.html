@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOUR TITLE HERE | নূর আলম</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600&family=Noto+Naskh+Arabic:wght@400;700&family=Noto+Serif+Bengali:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <span id="current-date" class="header-date"></span>
+            <button id="theme-toggle">🌙 Dark Mode</button>
+            <a href="index.html" class="logo">নূর আলম</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="article-wrapper">
+        <header class="article-header">
+            <!-- 1. PUT YOUR ARTICLE TITLE HERE -->
+            <h1 class="article-title">আপনার নতুন গল্প এখানে লিখুন</h1>
+            <!-- 2. PUT YOUR DATE AND CATEGORY HERE -->
+            <span class="article-meta">June 24, 2026 • Journal</span>
+        </header>
+
+        <article class="article-body">
+            <!-- 3. PUT YOUR ARTICLE TEXT HERE. Use <p> tags for each paragraph -->
+            <p class="drop-cap">প্র</p>
+            <p>থম অনুচ্ছেদ এখানে লিখুন...</p>
+            
+            <p>দ্বিতীয় অনুচ্ছেদ এখানে লিখুন...</p>
+
+            <!-- Example Image -->
+            <img src="YOUR_IMAGE_LINK_HERE" alt="Image description">
+            <div class="image-caption">আপনার ছবির ক্যাপশন</div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container"><p>&copy; 2026 নূর আলম. All rights reserved.</p></div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('theme-toggle');
+        if(localStorage.getItem('theme') === 'dark') { document.documentElement.setAttribute('data-theme', 'dark'); btn.textContent = '☀️ Light Mode'; }
+        btn.addEventListener('click', () => {
+            if(document.documentElement.getAttribute('data-theme') === 'dark') { document.documentElement.removeAttribute('data-theme'); localStorage.setItem('theme', 'light'); btn.textContent = '🌙 Dark Mode'; } 
+            else { document.documentElement.setAttribute('data-theme', 'dark'); localStorage.setItem('theme', 'dark'); btn.textContent = '☀️ Light Mode'; }
+        });
+        const dateElement = document.getElementById('current-date');
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        dateElement.textContent = new Date().toLocaleDateString('bn-BD', options);
+    </script>
+</body>
+</html>

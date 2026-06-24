@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Nur Alam</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <button id="theme-toggle">🌙 Dark Mode</button>
+            <a href="index.html" class="logo">Nur Alam</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contact-section">
+        <h1 class="article-title">Get in Touch</h1>
+        <p style="color: var(--text-muted);">Have a question about a photo, or just want to say hi? Drop me a message below.</p>
+        
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email Address" required>
+            <textarea rows="6" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </main>
+
+    <footer><div class="container"><p>&copy; 2026 Nur Alam.</p></div></footer>
+
+    <script>
+        const btn = document.getElementById('theme-toggle');
+        if(localStorage.getItem('theme') === 'dark') { document.documentElement.setAttribute('data-theme', 'dark'); btn.textContent = '☀️ Light Mode'; }
+        btn.addEventListener('click', () => {
+            if(document.documentElement.getAttribute('data-theme') === 'dark') { document.documentElement.removeAttribute('data-theme'); localStorage.setItem('theme', 'light'); btn.textContent = '🌙 Dark Mode'; } 
+            else { document.documentElement.setAttribute('data-theme', 'dark'); localStorage.setItem('theme', 'dark'); btn.textContent = '☀️ Light Mode'; }
+        });
+    </script>
+</body>
+</html>
