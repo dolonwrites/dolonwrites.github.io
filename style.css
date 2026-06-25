@@ -130,3 +130,47 @@ footer { text-align: center; padding: 60px 0 40px 0; border-top: 1px solid var(-
     /* Hide the date on phones to save space if it looks cluttered */
     .header-date { display: none; }
 }
+
+/* --- CONTACT FORM STYLING --- */
+form {
+    max-width: 600px; /* Keeps the form from stretching too wide */
+    margin: 20px 0;   
+    display: flex;
+    flex-direction: column; /* Stacks the boxes vertically */
+    gap: 15px; /* Adds space between each box */
+}
+
+input[type="text"], 
+input[type="email"], 
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Slightly rounds the corners */
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+textarea {
+    min-height: 150px; /* Makes the message box taller */
+    resize: vertical;
+}
+
+button, 
+input[type="submit"] {
+    padding: 12px 24px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    align-self: center; /* Keeps the button from stretching across the whole screen */
+}
+
+button:hover, 
+input[type="submit"]:hover {
+    background-color: #555; /* Changes color slightly when you hover over it */
+}
