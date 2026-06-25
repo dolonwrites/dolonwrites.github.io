@@ -11,7 +11,7 @@
 
     <header>
         <div class="container">
-            <button id="theme-toggle">🌙 Dark Mode</button>
+            <button id="theme-toggle">🌙 <span class="hide-mobile">Dark Mode</span></button>
             <a href="index.html" class="logo">Nur Alam</a>
             <nav>
                 <a href="index.html">Home</a>
@@ -37,10 +37,21 @@
 
     <script>
         const btn = document.getElementById('theme-toggle');
-        if(localStorage.getItem('theme') === 'dark') { document.documentElement.setAttribute('data-theme', 'dark'); btn.textContent = '☀️ Light Mode'; }
+        if(localStorage.getItem('theme') === 'dark') { 
+            document.documentElement.setAttribute('data-theme', 'dark'); 
+            btn.innerHTML = '☀️ <span class="hide-mobile">Light Mode</span>'; 
+        }
         btn.addEventListener('click', () => {
-            if(document.documentElement.getAttribute('data-theme') === 'dark') { document.documentElement.removeAttribute('data-theme'); localStorage.setItem('theme', 'light'); btn.textContent = '🌙 Dark Mode'; } 
-            else { document.documentElement.setAttribute('data-theme', 'dark'); localStorage.setItem('theme', 'dark'); btn.textContent = '☀️ Light Mode'; }
+            if(document.documentElement.getAttribute('data-theme') === 'dark') { 
+                document.documentElement.removeAttribute('data-theme'); 
+                localStorage.setItem('theme', 'light'); 
+                btn.innerHTML = '🌙 <span class="hide-mobile">Dark Mode</span>'; 
+            } 
+            else { 
+                document.documentElement.setAttribute('data-theme', 'dark'); 
+                localStorage.setItem('theme', 'dark'); 
+                btn.innerHTML = '☀️ <span class="hide-mobile">Light Mode</span>'; 
+            }
         });
     </script>
 </body>
