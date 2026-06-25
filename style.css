@@ -109,3 +109,24 @@ footer { text-align: center; padding: 60px 0 40px 0; border-top: 1px solid var(-
 .newsletter-form input { flex-grow: 1; padding: 12px; border: 1px solid var(--border-color); border-right: none; border-radius: 4px 0 0 4px; background: var(--card-bg); color: var(--text-main); font-family: inherit; }
 .newsletter-form button { padding: 12px 20px; background: var(--text-main); color: var(--bg-color); border: none; border-radius: 0 4px 4px 0; cursor: pointer; font-weight: 600; transition: background 0.3s; font-family: 'Hind Siliguri', sans-serif;}
 .newsletter-form button:hover { background: var(--accent); color: #fff; }
+
+/* --- RESPONSIVE DESIGN (FOR PHONES) --- */
+@media screen and (max-width: 600px) {
+    /* Stack the main grid so articles aren't side-by-side */
+    .blog-grid, .more-stories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Shrink the font sizes so they don't break the layout */
+    h1 { font-size: 1.8rem; }
+    .hero h2 { font-size: 1.5rem; }
+    .post-title { font-size: 1.2rem; }
+    
+    /* Make headers more compact for small screens */
+    header { padding: 20px 0; }
+    .logo { font-size: 1.8rem; }
+    nav a { margin: 0 5px; font-size: 0.8rem; }
+    
+    /* Hide the date on phones to save space if it looks cluttered */
+    .header-date { display: none; }
+}
